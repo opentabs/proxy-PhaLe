@@ -8,43 +8,67 @@
   <style type = "text/css"> 
     @font-face {
       font-family: "Brandon";
-      src: url("Fonts/BText-Regular.otf");
+      src: url("Fonts/BTextRegular.otf");
     }
   </style>
   <style type = "text/css"> 
     @font-face {
       font-family: "Brandon-Bold";
-      src: url("Fonts/BText-Bold.otf");
+      src: url("Fonts/BTextBold.otf");
     }
   </style>
   <style type = "text/css">    
     @font-face {
       font-family: "Brandon-Light";
-      src: url("Fonts/BText-Light.otf");
+      src: url("Fonts/BTextLight.otf");
     }
   </style>
   <style type = "text/css">
     @font-face {
       font-family: "Brandon-Black";
-      src: url("Fonts/BText-Black.otf");
+      src: url("Fonts/BTextBlack.otf");
     }
   </style>
   <style type = "text/css"> 
     @font-face {
       font-family: "Brandon-Medium";
-      src: url("Fonts/BText-Medium.otf");
+      src: url("Fonts/BTextMedium.otf");
     }
   </style>
 </head>
 <body>
-<div id="app"></div>
+<div id="overview"></div>
+<div id="sidebar"></div>
+<div id="photos"></div>
+<div id="menu"></div>
+<div id="reviews"></div>
+
 <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-<script src="http://localhost:3002/restaurants/1/bundle.js"></script>
+<script src="https://s3-us-west-1.amazonaws.com/photowheelopentabs/bundle/bundle.js"></script>
+<script src="https://s3-us-west-1.amazonaws.com/open-tabs-reviews/bundle.js"></script>
+<script src="https://s3-us-west-1.amazonaws.com/opentabs-menu/bundle.js"></script>
+<script src="https://s3-us-west-1.amazonaws.com/opentabs-sidebar/bundle.js"></script>
 <script>
   ReactDOM.render(
     React.createElement(Photos),
-    document.getElementById('app')
+    document.getElementById('photos')
+  );
+  ReactDOM.render(
+    React.createElement(Menu),
+    document.getElementById('menu')
+  );
+  ReactDOM.render(
+    React.createElement(Reviews),
+    document.getElementById('reviews')
+  );
+  ReactDOM.render(
+    React.createElement(Sidebar),
+    document.getElementById('sidebar')
+  );
+  ReactDOM.render(
+    React.createElement(Overview),
+    document.getElementById('overview')
   );
 </script>
 </body>
