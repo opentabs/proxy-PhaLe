@@ -1,116 +1,59 @@
-.photo-gallery {
-  width: 640px;
-
+@font-face {
+  font-family: "Brandon";
+  src: 
+    url("fonts/BTextRegular.otf");
 }
-
-.photo-gallery-header {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 32px;
-  color: #2d333f;
-  border-bottom: 1px solid #d8d9db;
-  padding-bottom: 16px;
-  margin: 0 0 16px 0;
-  display: flex;
-  justify-content: space-between;
+@font-face {
+  font-family: "Brandon-Medium";
+  src:
+    url("fonts/BTextMedium.otf");
 }
-
-body {
-  font-family: Brandon-Bold,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol, Verdana, sans-serif;
-  margin: 0;
+@font-face {
+  font-family: "Brandon-Bold";
+  src:
+    url("fonts/BTextBold.otf");
 }
-
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: "Brandon-Light";
+  src:
+    url("fonts/BTextLight.otf");
 }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.proxy-container {
+  display: grid;
+  grid-template-columns: 640px 320px;
+  grid-template-rows: 0px auto auto minmax(700px, auto) auto;
+  flex-direction: row-reverse;
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column-gap: 40px;
 }
-
-.column {
-  float: left;
-  width: 20%;
+.proxy-sidebar {
+  padding-top: 10px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 6;
 }
-
-.photoGridMainContainer {
-  width: 640px;
+.proxy-overview {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
 }
-
-.photoGridContainer {
-  max-width: 100%;
-  max-height: 100%;
+.proxy-photos {
+  grid-column: 1;
+  grid-row: 3 / 4;
 }
-
-.photoGridPhoto {
-  width: 125px;
-  height: 125px;
-  object-fit: cover;
-}
-
-.modalPhoto {
-  width: 400px;
-  height: 400px;  
-  object-fit: cover;
-  margin-left: 30%;
-}
-
-.modal {
-  display: block;
-  position: fixed;
-  z-index: 10;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.proxy-menu {
+  grid-column: 1;
+  grid-row: 4 / 5;
   overflow: auto;
-  background: rgba(0,0,0,.9);
+  display: flex;
+  flex-direction: column;
 }
-
-.modal-content {
-  position: relative;
-  margin: 0 auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
+.proxy-reviews {
+  grid-column: 1;
+  grid-row: 5;
 }
-
-.close {
-  color: #91949a;
-  font-size: 35px;
-  font-weight: none;
-  position: absolute;
-  padding: 25px;
-  right: 0;
-  top: 20px;
+.main-image {
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: -50px;
 }
-
-.cursor {
-  cursor: pointer;
-}
-
-.prev,
-.next {
-    color: #91949a;
-    font-size: 1.2rem;
-    position: absolute;
-    top: 50%;
-    font-family: icons;
-    font-style: normal;
-    font-weight: 700;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    cursor: pointer;
-  	width: auto;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
